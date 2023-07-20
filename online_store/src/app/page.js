@@ -1,9 +1,34 @@
-import Image from 'next/image'
+import React from "react";
+import Items from "@/app/Components/Items";
 
-export default function Home() {
-  return ( <>
-              <div><h1>Hello world</h1></div>
-          </>
-  )
+async function getData() {
+    const res = await fetch('https://fakestoreapi.com/products')
+    // The return value is *not* serialized
+    // You can return Date, Map, Set, etc.
+   
+    // Recommendation: handle errors
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+   
+    return res.json()
+  }
+
+async function Products(){
+    const data = await getData()
+    const mappedData= data.map(info=><Items info={info}/>)
+    return(
+        <>
+            <div className="relative">
+                <div className='absolute top-16 grid grid-cols-4 gap-10 items-center p-8 m-2'>
+                    {mappedData}
+                </div>
+            </div>
+        </>
+    )
 }
+
+export default Products
+
    

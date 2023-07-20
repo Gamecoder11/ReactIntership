@@ -1,23 +1,23 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 
-// export async function generateStaticParams() {
-//     const res = await fetch(`https://fakestoreapi.com/products`)
-//     const data = await res.json()
-//     const paths = data.map(info=>({id:`${info.id}`}))
-//     return paths
-//   }
+export async function generateStaticParams() {
+    const res = await fetch(`https://fakestoreapi.com/products`)
+    const data = await res.json()
+    const paths = data.map(info=>({id:`${info.id}`}))
+    return paths
+  }
    
-//   async function getPost(params) {
-//     const res = await fetch(`https://fakestoreapi.com/products/${params.Details}`)
-//     const info = await res.json()
+  async function getPost(params) {
+    const res = await fetch(`https://fakestoreapi.com/products/${params.Details}`)
+    const info = await res.json()
    
-//     return info
-//   }
+    return info
+  }
    
   
 
 export default async function Details({params}){
-    //const info= await getPost(params)
+    const info= await getPost(params)
     return(
         // <div className='relative'>
         //     <div className="absolute top-16 p-4 flex flex-col items-center " key={info.id}>

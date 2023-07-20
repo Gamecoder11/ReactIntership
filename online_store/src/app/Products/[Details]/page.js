@@ -1,11 +1,11 @@
 import Image from 'next/image'
 
-// export async function generateStaticParams() {
-//     const res = await fetch(`https://fakestoreapi.com/products`)
-//     const data = await res.json()
-//     const paths = data.map(info=>({id:`${info.id}`}))
-//     return paths
-//   }
+export async function generateStaticParams() {
+    const res = await fetch(`https://fakestoreapi.com/products`)
+    const data = await res.json()
+    const paths = data.map(info=>({Details:`${info.id}`}))
+    return paths
+  }
    
   async function getPost(params) {
     const res = await fetch(`https://fakestoreapi.com/products/${params.Details}`)

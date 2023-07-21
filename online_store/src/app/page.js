@@ -21,7 +21,7 @@ async function Products(){
     return(
         <>
             <div className="relative">
-                <div className='absolute top-16 grid grid-flow-row auto-rows-max sm:grid-cols-4 sm:gap-10 items-center p-2 m-2'>
+                <div className='absolute top-16 grid grid-flow-row auto-rows-max sm:grid-cols-3 sm:gap-5 lg:grid-cols-4 md:gap-10 items-center p-2 m-8 sm:m-4 lg:m-8'>
                     {mappedData}
                 </div>
             </div>

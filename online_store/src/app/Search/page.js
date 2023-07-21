@@ -36,11 +36,11 @@ export default function Searchbar(){
                     <div className='flex flex-col'>
                         <div className='bg-slate-300'>
                             <div className="p-4 flex flex-row justify-center items-center">
-                                <div><Link href={'/'}><div className='bg-white p-1 rounded-md' ><AiFillHome size={32}/></div></Link></div>
-                                <button className="flex flex-row items-center text-zinc-800 font-bold bg-white p-1 rounded-md ml-12">
+                                <div className='' ><Link href={'/'}><div className='bg-white p-1 rounded-md' ><AiFillHome size={32}/></div></Link></div>
+                                <div className="flex flex-row items-center text-zinc-800 font-bold bg-white p-1 rounded-md ml-12">
                                     <div className='m-2'><BsSearch/></div> 
-                                    <div><input type="search" id="q" placeholder="Search Here ..." className='focus:outline-none' onChange={e=>setQuery(e.target.value)} /></div>
-                                </button>
+                                    <input type="search" id="q" placeholder="Search ..." className='w-11/12 focus:outline-none' onChange={e=>setQuery(e.target.value)} />
+                                </div>
                             </div>
                         </div>
                         <div className='relative flex justify-center'>
